@@ -24,3 +24,5 @@ set(PUBLIC_HEADER_FILES
 add_library(${PROJECT_NAME} STATIC UT_SolidAngle.cpp UT_Array.cpp)
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${PUBLIC_HEADER_FILES}")
 target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
+
+configure_file(WindingNumberConfig.cmake.in WindingNumberConfig.cmake @ONLY)

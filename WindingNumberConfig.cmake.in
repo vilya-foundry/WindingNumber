@@ -1,0 +1,13 @@
+#find the path to the files
+get_filename_component(FOLDER "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(FOLDER "${FOLDER}" PATH) #remove cmake
+ 
+#set the target that we are working with
+add_library(Windingnumber STATIC IMPORTED)
+set_property(TARGET WindingNumber PROPERTY IMPORTED_LOCATION ${FOLDER}/lib/libMyAwesomeLib.a)
+ 
+#set up the include path for this target
+set_target_properties(WindingNumber
+  PROPERTIES
+    INTERFACE_INCLUDE_DIRECTORIES "${FOLDER}/include"
+)
